@@ -434,7 +434,6 @@
             e.stopPropagation();
             e.preventDefault();
               //e.keyCode = 9;
-            return false;
           }
         }
 
@@ -451,6 +450,10 @@
         }
         else {
           tagIsValid = false;
+        }
+        
+        if (tagManagerOptions.preventSubmitOnEnter && e.which == 13) {
+              return false;
         }
 
         // console.log("keypress: " + e.which);
