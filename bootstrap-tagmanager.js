@@ -458,6 +458,13 @@
 
         // console.log("keypress: " + e.which);
       });
+      
+      // Make blurring the field simulate a "," keypress
+      obj.on('blur', function() {
+            var e = jQuery.Event("keypress");
+            e.which = 44;
+            $(this).trigger(e);
+      });
 
       if (tagManagerOptions.deleteTagsOnBackspace) {
         obj.on("keydown", obj, function (e) {
