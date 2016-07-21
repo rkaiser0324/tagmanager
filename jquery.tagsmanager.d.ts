@@ -1,5 +1,5 @@
 // Type definitions for jQuery Tags Manager
-// Project: http://welldonethings.com/tags/manager
+// Project: http://welldonethings.com/tags/manager/v3
 // Definitions by: https://github.com/max-favilli
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
@@ -18,7 +18,8 @@ interface ITagsManagerOptions {
     typeaheadSource?: any;
     AjaxPush?: string; //url
     AjaxPushAllTags?: string; //url
-    delimeters?: number[];
+    AjaxPushParameters: { [key: string]: string; };
+    delimiters?: number[];
     backspace?: number[];
     maxTags?: number;
     blinkBGColor_1?: string;
@@ -30,6 +31,7 @@ interface ITagsManagerOptions {
     tagCloseIcon?: string;
     tagClass?: string;
     validator: Function;
+    onlyTagList?: bool;
 }
 
 interface ITypeaheadOverrides {
@@ -43,7 +45,7 @@ interface ITagsManager {
     obj: JQuery;
     objName: string;
     queuedTag: string;
-    delimeters: number[];
+    delimiters: number[];
     backspace: number[];
     tagToManipulate: string;
 
